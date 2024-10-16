@@ -1,4 +1,6 @@
 #!flask/bin/python
+import os
+
 from flask import Flask, request, request_started
 
 app = Flask(__name__)
@@ -12,4 +14,4 @@ def index():
     else:
         return str(f"Our counter is: {counter} ")
 if __name__ == '__main__':
-    app.run(debug=True,port=80,host='0.0.0.0')
+    app.run(debug=True,port=os.environ['PORT'],host='0.0.0.0')
