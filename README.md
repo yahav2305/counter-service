@@ -1,2 +1,5 @@
-# counter-service
-This is a simple web server which counts the amount of POST requests it served, and return it on every GET request it gets
+# Configure AWS access using cli
+
+1. Create access keys in aws portal -> security credentials -> create access key
+2. Install aws cli: `sudo snap install aws-cli --classic`
+3. In cli run `aws configure` and enter access key, secret access key and region
