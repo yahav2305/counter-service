@@ -1,0 +1,21 @@
+name: Pull Testing
+on: 
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - 'main'
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+    - name: Setup Helm
+      uses: azure/setup-helm@v3
+      with:
+        version: 'v3.15.3'
+      id: install
+    - name: Lint helm chart
+      run: helm lint infra/helm/counter --values infra/helm/values/counter.yaml
