@@ -4,6 +4,13 @@
 2. Install aws cli: `sudo snap install aws-cli --classic`
 3. In cli run `aws configure` and enter access key, secret access key and region
 
+# Configure access to EKS
+
+Run the following command to update kubectl access to the EKS cluster on a machine with kubectl installed:
+```sh
+aws eks update-kubeconfig --region eu-north-1 --name counter
+```
+
 # IAC
 
 I am using terraform to create the EKS cluster that will run the workloads.  
